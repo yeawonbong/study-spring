@@ -2,8 +2,7 @@
 
 # 스프링 컨테이너 생명주기
 
-![image](https://github.com/yeawonbong/study-spring/assets/75327385/63c2e067-4868-41a3-bdfc-38258fc203ca)
-
+![image](https://github.com/yeawonbong/study-spring/assets/75327385/26ec553e-b21e-40ab-9a71-9a39fdf56219)
 
 - 생성시점
     - GenericXmllApplicationContext 객체를 생성 (new)할 때 메모리공간에 스프링 컨테이너가 생긴다.
@@ -27,8 +26,7 @@
 
 ### (방법1) 인터페이스 이용
 
-![image](https://github.com/yeawonbong/study-spring/assets/75327385/26ec553e-b21e-40ab-9a71-9a39fdf56219)
-
+![image](https://github.com/yeawonbong/study-spring/assets/75327385/63c2e067-4868-41a3-bdfc-38258fc203ca)
 
 - 스프링에서 제공하는 인터페이스 (구현되지 않는 껍데기)
     - InitializingBean
