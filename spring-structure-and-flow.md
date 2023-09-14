@@ -93,3 +93,80 @@
 
 - 일반적으로는 명시적인 방법을 많이 이용한다. (스프링 설정파일 직접명시)
 
+# Controller 객체 설정
+
+- DispatcherServlet에서 HandlerMapping(Controller 탐색), HandlerAdapter(Method Member 탐색)를 통해 Controller로 요청을 보내고,
+- 컨트롤러에서 데이터를 Model객체, View객체로 응답을 보낸다. DispatcherServlet으로 보낸다.
+- HandlerMapping, HandlerAdapter는 Spring Container에 자동으로 생성이 되지만, Controller는 개발자가 직접 만들어줘야 한다.
+
+## `annotation-driven 태그` - 스프링 설정파일
+
+```java
+// servlet-context.xml
+
+<annotation-driven/>
+```
+
+- 스프링 설정 파일 `servlet-context.xml`에 `<annotation-driven/>` 라는 태그를 넣어주면
+- SpringContainer를 사용하기 위한 여러 클래스들이 Bean 객체로 스프링 설정파일에 존재하게 된다.
+
+## `@Controller 어노테이션` - 사용할 객체 클래스
+
+```java
+@Controller
+public class HomeController {
+	...
+}
+```
+
+- 일반적인 클래스로 작성하고, 컨트롤명 위에 `@Controller` 어노테이션을 붙여주면 해당 클래스는 Controller로 기능을 하게 된다.
+- 단, 위 과정 (스프링 설정파일에 annotation-driven 태그 작성)이 선행 되어야만 한다.
+- `HandlerMapping`이 `@Controller` 어노테이션을 보고 요청에 알맞는 컨트롤러 탐색
+
+## `@RequestMapping 어노테이션`
+
+```java
+// ex) 요청: http://localhost:8090/test/success
+
+@RequestMapping("/success")
+public String success(Model model) {
+	...
+	return "success";
+}
+```
+
+- 컨트롤러 안에 있는 메소드명 위에 `@RequestMapping` 어노테이션을 붙여주면 해당 메소드는 HandlerMapping를 통해 특정 요청url과 매핑이 된다.
+- `HandlerAdapter`가 `@RequestMapping` 어노테이션의 문자를 보고 요청에 알맞는 메소드 탐색
+
+## Model 타입의 파라미터
+
+- 컨트롤러 뒤에는 Service, DAO, DB 등이 있겠다.
+- 그러한 처리를 하고 난 뒤 `DispatcherServlet`으로 다시 올릴 때 사용되는 객체가 Model, View.
+- 예시
+    
+    ```java
+    // Controller class의 코드
+    @RequestMapping("/success")
+    public String success(Model model) {
+    	...
+    	return "success";
+    }
+    
+    // View의 코드
+    model.setAttribute("tempData", "model has data!!");
+    ```
+    
+    - 컨트롤러의 메소드의 파라미터로 Model객체를 넣어준다.
+    - View파일 안의 코드에서 `{모델객체}.setAttribute({속성이름}, {속성값});`로 사용한다. (데이터를 Model 객체에 담아서 전달한다.)
+    - 개발자는 Model 객체에 데이터를 담아 DispatcherServlet에 전달할 수 있다.
+    - DispatcherServlet에 전달된 Model데이터는 View에서 가공되어 클라이언트에게 응답처리된다.
+    
+
+# View 객체
+
+(pass)
+
+# 전체적인 웹프로그래밍 구조 정리
+![image](https://github.com/yeawonbong/study-spring/assets/75327385/f80490fe-eb2f-4062-8633-423ce2c01f0e)
+
+
