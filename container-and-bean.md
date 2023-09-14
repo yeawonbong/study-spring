@@ -1,15 +1,4 @@
 # Spring Container, Bean
-  
-# Spring 프로젝트 폴더 구조
-
-- java 폴더
-    - 앞으로 만들어지는 자바 파일들이 관리되는 폴더
-    - 순수 자바 코드들
-- resources 폴더
-    - 자원을 관리하는 폴더로, 스프링 설정파일(XML) 또는 프로퍼티 파일 등이 관리된다.
-    - 스프링 경우 `applicationContext.xml`이 여기에 위치함.
-- java, resources 폴더는 스프링 프레임워크의 기본 구조를 이루는 폴더로, 그대로 구조를 따라야 한다.
-
 # Spring 컨테이너 생성 및 Bean객체 호출 과정
 
 ![image](https://github.com/yeawonbong/study-spring/assets/75327385/be6fad4a-10c6-470d-9239-ef2e12afd133)
