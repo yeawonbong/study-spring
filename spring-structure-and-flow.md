@@ -1,3 +1,34 @@
+![image](https://github.com/yeawonbong/study-spring/assets/75327385/1f7cb4d7-f6cc-4dbb-9e7b-bc1806dff273)# Spring 프로젝트 폴더 구조
+
+![image](https://github.com/yeawonbong/study-spring/assets/75327385/6c24cce1-d9b2-4289-8670-efe07d8d13be)
+
+
+1. java파일
+    - java파일들이 위치한다. 주로 패키지로 묶어서 관리.
+    - 웹 애플리케이션에서 사용되는 Controller, Service, DAO객체들이 위치한다.
+2. resources 
+    - 자원을 관리하는 폴더로, 스프링 설정파일(XML) 또는 프로퍼티 파일 등이 관리된다.
+    - JSP파일을 제외한 html, css, js파일등이 위치한다.
+3. webapp
+    - 웹과 관련된 파일들(스프링 설정파일, JSP파일, HTML파일 등..)이 위치한다.
+4. spring폴더
+    - 스프링 컨테이너를 생성하기 위한 스프링 설정파일이 위치한다.
+    - `applicationContext.xml` 등의 설정파일이 여기에 위치함.
+5. views 폴더 : View로 사용될 JSP파일이 위치한다.
+6. pom.xml파일 : 메인 레파지토리에서 프로젝트에 필요한 라이브러리를 내려받기 위한 메이븐 설정 파일
+
+## 프로젝트 구조 예시
+
+![image](https://github.com/yeawonbong/study-spring/assets/75327385/5050fbf1-0c37-4310-8c53-19c0646b3046)
+
+
+- dto(Data Transfer Object) 객체
+    - Book.java
+- dao 객체
+    - BookDao.java
+- 서비스 객체
+    - BookRegisterService.java
+    - BookSearchService.java
 # 웹 프로그래밍을 구축하기 위한 설계 모델
 
 ## Model1 방식
