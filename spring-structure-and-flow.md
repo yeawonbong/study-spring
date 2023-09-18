@@ -1,4 +1,4 @@
-![image](https://github.com/yeawonbong/study-spring/assets/75327385/1f7cb4d7-f6cc-4dbb-9e7b-bc1806dff273)# Spring 프로젝트 폴더 구조
+# Spring 프로젝트 폴더 구조
 
 ![image](https://github.com/yeawonbong/study-spring/assets/75327385/6c24cce1-d9b2-4289-8670-efe07d8d13be)
 
