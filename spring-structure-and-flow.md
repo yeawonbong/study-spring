@@ -115,6 +115,8 @@
 
 - 웹 환경설정하는 파일
 - 서블릿 등록, 초기 파라미터 등록 등 설정할 수 있다.
+- 웹 어플리케이션에서 최초 사용자의 요청이 발생하면 가장 먼저 DispatcherServlet이 사용자의 요청을 받는다.
+- 따라서 개발자는 DispatcherServlet을 서블릿으로 등록 해주어야 하고, 사용자의 모든 요청을 받기 위해서 서블릿 맵핑 경로는 ‘/’로 설정한다.
 
 ![image](https://github.com/yeawonbong/study-spring/assets/75327385/41b5d795-8ed0-4144-8caa-599877fa857f)
 
