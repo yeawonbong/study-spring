@@ -198,19 +198,3 @@ public String success(Model model) {
 # View 객체
 
 (pass)
-
-# 전체적인 웹프로그래밍 구조 정리
-![image](https://github.com/yeawonbong/study-spring/assets/75327385/97ffb371-4c01-410c-89c8-36684ab2759d)
-
-1. 사용자의 모든 요청은 DispatcherServlet이 처음 받는다.
-2. DispatcherServlet → HandlerMapping → DispatcherServlet 
-    - 객체에 요청에 부합하는 Controller를 탐색한 후DispatcherSevlet에 알려준다.
-    - 프로젝트에 존재하는 모든 Controller 객체를 검색하는데, 이 때 판단 조건이 `@Controller` 어노테이션.
-3. DispatcherServlet → HandlerAdapter → 해당 Controller의 메소드 탐색하여 실행
-    - 객체에 요청에 부합하는 메소드를 탐색한 후 해당 Controller객체의 메소드를 실행한다.
-    - 이 때 `HandlerAdapter`가 메소드에 붙어있는 `@RequestMapping` 어노테이션의 문자를 보고 요청에 알맞는 메소드 선택.
-4. Controller → HandlerAdapter로 ModelAndView 객체 반환.
-    - Controller객체의 메소드가 실행된 후 Controller객체는 HandlerAdapter객체에 ModelAndView객체를 반환하는데, 여기에는 응답에 필요한 데이터와 뷰(JSP파일)가 담겨있다.
-5. HandlerAdapter → DispatcherServlet로 ModelAndView 객체 반환.
-6. DispatcherServlet → ViewResolver → View
-    - ModelAndView정보를 토대로 적합한 JSP 문서(view)를 찾고, JSP문서로 응답.
